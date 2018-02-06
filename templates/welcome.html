@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block content %}
+
+<div class="container homebanner">
+  <h1 class="title">We will let them know...</h1>
+  <hr>
+</div>
+
+<div class="container mb-2">
+  {% if user.is_authenticated %}
+  <div class="col-md order-md-1 px-4 py-3 col-md-8 mx-auto bg-content mt-2 text-white align-self-center rounded">
+  {% else %}
+  <div class="row">
+    <div class="col-md order-md-2 px-4 py-3 col-md-6 mx-auto bg-content mt-2 text-white align-self-center rounded">
+      <h2 class="my-2">Enter as <i><strong>Guest</strong></i> or <i><strong>Sign Up Now</strong></i></h2>
+      <hr>
+      <form action="" method="post">
+        <h3 class="my-2">Enter as guest</h3>
+        <label for="guest_email">Email:</label><br>
+        <input type="email" id="guest_email" name="guest_email" placeholder="example@email.com" required><br>
+        <label for="guest_password">Invitation Code:</label><br>
+        <input type="password" id="guest_password" name="guest_password" placeholder="Invitation Code" required>
+        <button class="btn" type="submit">Continue</button>
+      </form>
+      <hr>
+      <form action="" method="post">
+        <h3 class="my-2">Sign Up Now</h3>
+        <br>
+        <p>Click <strong><a href="{% url 'e_reg:signup' %}">HERE</a></strong> to sign up instantly!</p>
+      </form>
+      <!-- <ul>
+        <li>Enter as guest using provided hotel code for one time use</li>
+        <li>Become a member now to store details for future stays at partner hotels</li>
+        <li>Limited profile options as one-time guest, full profile and preference access as member</li>
+        <li>Limited: Only registration card access </br>Room prep details, i.e. Anti allegic bedding </br> Room service orders.</li>
+        <li>Full profile: All Limited options </br> Room types, i.e. HI, View, FE </br> Food preferences + allergies </br> Membership benefits.</li>
+      </ul> -->
+    </div>
+
+    <div class="col-md order-md-1 px-4 py-3 col-md-4 mx-auto bg-content mt-2 text-white align-self-center rounded">
+    {% endif %}
+
+      <h2 class="my-2"><strong>Membership</strong></h2>
+      <hr>
+      <h3>This is how it works...</h3>
+      <ul>
+        <li><strong>TIDICOmforts</strong></li>
+        <li>Move up status tiers</li>
+        <ul>
+          <li>Alpha</li>
+          <li>Beta</li>
+          <li>Omega</li>
+        </ul>
+        <li>Earn and Spend style:</li>
+        <ul>
+          <li>Earn points according to tier level</li>
+          <li>Use points to buy benefits</li>
+          <li>Option to buy points directly</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

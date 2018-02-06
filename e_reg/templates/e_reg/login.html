@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Login {% endblock %}
+
+{% block content %}
+
+<div class="container homebanner">
+  <h1 class="title">Login...</h1>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto px-4 py-3 col-md-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
+      <h2>Log in to get full access to your own Hotel Profile</h2>
+      <hr>
+      <form action="" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div class="mx-auto px-4 py-3 col-md-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
+      <h3>Not yet a member?</h3>
+      <hr>
+      <p>Click <strong><a href="{% url 'e_reg:signup' %}">HERE</a></strong> to sign up instantly!</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

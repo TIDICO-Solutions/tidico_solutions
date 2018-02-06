@@ -1,0 +1,153 @@
+/* --------------------
+      Base Styles
+-------------------- */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Old Standard TT', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style-type: none;
+  padding-top: 2px;
+  font-size: 1em;
+}
+
+ul {
+  padding-left: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: serif;
+  /* background: url("../Images/bg-plane.jpg")  center no-repeat; */
+  background-size: cover;
+  background-color: #d9dcd6;
+}
+
+.bg-content {
+  background-color: rgba(73,74,79,.9);
+}
+
+.container {
+  flex-grow: 1;
+}
+
+/* --------------------
+        Nav
+-------------------- */
+
+.bg-gradient {
+  /* background: linear-gradient(145deg, #0d0d0d, #696969, #fff, transparent 190%); */
+  background-color: #272a22;
+  border-bottom: 1px solid #f1f1f1;
+  box-shadow: 0 3px 10px;
+}
+
+nav {
+  font-size: 1.05em;
+}
+
+nav a:hover {
+  font-size: 1.1em;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: #696969;
+}
+
+/* --------------------
+        Content
+-------------------- */
+
+.title {
+  color: #4d4d33;
+  text-shadow: 4px -1px 8px #696969;
+  font-size: 3em;
+}
+
+body a:hover {
+  color: lightgreen;
+}
+
+div.homebanner hr {
+  border-color: #4d4d33
+}
+
+.homebanner {
+  margin-top: 70px;
+}
+
+/* --------------------
+        Footer
+-------------------- */
+
+.main-footer {
+  border-top: solid 1px #f1f1f1;
+  background-color: #262626;
+  color: #fff;
+  padding: 0 5px;
+  box-shadow: 0 -1px 10px #000;
+}
+
+footer a:hover {
+  color: orange;
+  text-decoration: underline dotted;
+}
+
+body hr,
+footer hr {
+  border-color: #fff
+}
+
+/* --------------------
+      Media Queries
+-------------------- */
+
+@media (min-width: 768px) {
+
+  .main-nav a,
+  .main-nav ul {
+    background: none;
+  }
+
+  .main-header {
+    background: linear-gradient(145deg, #000, #696969, #fff, transparent 190%);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2em;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .main-nav {
+    display: flex;
+    margin-top: 16px;
+  }
+
+  .main-nav li {
+    border: none;
+    padding: 0 0 0 1em;
+  }
+
+  .homebanner {
+    margin: 70px auto 10px;
+    width: 100%;
+  }
+}

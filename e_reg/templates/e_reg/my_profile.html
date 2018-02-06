@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block title %}My Profile {% endblock %}
+
+{% block content %}
+
+
+<div class="container homebanner">
+  <h1 class="title">My Profile</h1>
+  <hr>
+</div>
+
+{% if messages %}
+{% for message in messages %}
+<div class="container col-md-4 alert alert-success alert-dismissible fade show align-self-center rounded" role="alert">
+  {{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto px-4 py-3 col-lg-11 bg-content my-2 text-white align-self-center rounded">
+      <div class="row">
+        <div class="mx-auto col-sm-10">
+          <h2 class="pt-2">Contact Card:</h2>
+        </div>
+        <div class="mx-auto col-sm-1 pt-4">
+          <a href="{% url 'e_reg:contact_update' %}"><u>edit</u></a>
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto px-4 py-3 my-2 col-md-5">
+            <table>
+              <th><u>Contact:</u></th>
+              <tr>
+                <td>Name:</td>
+                <td class="pl-4">{{ user.guestuser.last_name }}, {{ user.guestuser.first_name }}</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td class="pl-4">{{ user.guestuser.email }}</td>
+              </tr>
+              <tr>
+                <td>Telephone:</td>
+                <td class="pl-4">{{ user.guestuser.telephone_number }}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="mx-auto px-4 py-3 my-2 col-md-5">
+            <table>
+              <th><u>Address:</u></th>
+              <tr>
+                <td>Street:</td>
+                <td class="pl-4">{{ user.guestuser.address_street }}</td>
+              </tr>
+              <tr>
+                <td>Postcode:</td>
+                <td class="pl-4">{{ user.guestuser.address_postcode }}</td>
+              </tr>
+              <tr>
+                <td>City:</td>
+                <td class="pl-4">{{ user.guestuser.address_city }}</td>
+              </tr>
+              <tr>
+                <td>Country:</td>
+                <td class="pl-4">{{ user.guestuser.address_country }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mx-auto px-4 py-3 col-lg-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
+      <div class="row">
+        <div class="mx-auto col-sm-9">
+          <h2 class="pt-2">Room Preferences:</h2>
+        </div>
+        <div class="mx-auto col-sm-1 pt-4">
+          <a href="{% url 'e_reg:room_preference_update' %}"><u>edit</u></a>
+        </div>
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto px-4 py-3 my-2 col-md-11">
+            <table>
+              {% if user.guestuser.room_preferences %}
+                {% for preference in user.guestuser.room_preferences %}
+                <tr>
+                  <td class="py-1">{{ preference }}</td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                  <td>Please add some room prefences! <br> Make sure the hotel knows exactly what you desire.</td>
+                </tr>
+              {% endif %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto px-4 py-3 col-lg-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
+      <div class="row">
+        <div class="mx-auto col-sm-9">
+          <h2 class="pt-2">Habitual Preferences:</h2>
+        </div>
+        <div class="mx-auto col-sm-1 pt-4">
+          <a href=""><u>edit</u></a>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
