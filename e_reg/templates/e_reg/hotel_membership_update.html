@@ -14,8 +14,9 @@
     <div class="mx-auto px-4 py-3 col-md-11 bg-content my-2 text-white align-self-center rounded">
       <form action="" method="post">
         {% csrf_token %}
-        {{ formset }}
-        <input type="submit" class="btn" value="Update">
+        {% bootstrap_formset formset %}
+        <hr>
+        <input type="submit" class="btn float-right" value="Update">
       </form>
     </div>
   </div>

@@ -40,7 +40,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     room_preferences = MultiSelectField(max_length=500, choices=ROOM_PREFERENCES, blank=True)
-    # hotel_memberships = MultiSelectField(max_length=500, choices=HOTEL_MEMBERSHIPS, blank=True)
 
     objects = UserManager()
 

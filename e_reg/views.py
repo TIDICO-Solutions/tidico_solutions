@@ -91,8 +91,6 @@ def hotel_membership_update(request):
             for membership in memberships:
                 membership.guestuser = guestuser.guestuser
                 membership.save()
-            for membership in formset.deleted_objects:
-                membership.delete()
             messages.success(request, "You have succesfully updated your Hotel Memberships")
             return HttpResponseRedirect(guestuser.get_absolute_url())
     return render(request, "e_reg/hotel_membership_update.html", {'formset': formset})
