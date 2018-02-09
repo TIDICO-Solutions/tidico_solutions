@@ -39,3 +39,11 @@ class RoomPreferenceUpdateForm(forms.ModelForm):
         fields = [
             'room_preferences',
         ]
+
+
+class HotelMembershipUpdateForm(forms.ModelForm):
+    class Meta:
+        model = models.GuestUser
+        fields = [
+            'hotel_memberships',
+        ]

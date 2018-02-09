@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% load bootstrap3 %}
+
+{% block title %}Update Hotel Memberships{% endblock %}
+
+{% block content %}
+<div class="container homebanner">
+  <h1 class="title">Update Hotel Memberships...</h1>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="mx-auto px-4 py-3 col-md-11 bg-content my-2 text-white align-self-center rounded">
+      <form action="" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" class="btn" value="Update">
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

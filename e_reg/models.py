@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils import timezone
 from multiselectfield import MultiSelectField
 
-from .choices import COUNTRIES, ROOM_PREFERENCES
+from .choices import COUNTRIES, ROOM_PREFERENCES, HOTEL_MEMBERSHIPS
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -40,6 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     room_preferences = MultiSelectField(max_length=500, choices=ROOM_PREFERENCES, blank=True)
+    hotel_memberships = MultiSelectField(max_length=500, choices=HOTEL_MEMBERSHIPS, blank=True)
 
     objects = UserManager()
 

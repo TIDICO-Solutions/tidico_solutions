@@ -34,6 +34,14 @@ ROOM_PREFERENCES = (
 )
 
 
+HOTEL_MEMBERSHIPS = (
+    ("HHonors", "Hilton - HHonors"),
+    ("IHG Rewards Club", "Inter Continental - IHG Rewards Club"),
+    ("LeClub Accor Hotels", "Accor - LeClub Accor Hotels"),
+    ("Marriott Rewards", "Marriott - Marriott Rewards"),
+)
+
+
 COUNTRIES = (
     ("Afghanistan | افغانستان","Afghanistan | افغانستان"),
     ("Albania | Shqipëria","Albania | Shqipëria"),

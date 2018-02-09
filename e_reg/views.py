@@ -72,3 +72,17 @@ def room_preference_update(request):
             messages.success(request, "You have succesfully updated your Room Preferences")
             return HttpResponseRedirect(guestuser.get_absolute_url())
     return render(request, "e_reg/room_preference_update.html", {'form': form})
+
+
+@login_required
+def hotel_membership_update(request):
+    guestuser = request.user
+    form = forms.HotelMembershipUpdateForm(instance=guestuser)
+
+    if request.method == "POST":
+        form = forms.HotelMembershipUpdateForm(instance=guestuser, data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "You have succesfully updated your Hotel Memberships")
+            return HttpResponseRedirect(guestuser.get_absolute_url())
+    return render(request, "e_reg/hotel_membership_update.html", {'form': form})
