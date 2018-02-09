@@ -43,7 +43,15 @@ class RoomPreferenceUpdateForm(forms.ModelForm):
 
 class HotelMembershipUpdateForm(forms.ModelForm):
     class Meta:
-        model = models.GuestUser
+        model = models.HotelMembership
         fields = [
-            'hotel_memberships',
+            'membership_programme_name',
+            'membership_number',
         ]
+
+
+HotelMembershipUpdateFormSet = forms.modelformset_factory(
+    models.HotelMembership,
+    form = HotelMembershipUpdateForm,
+    extra=2,
+)

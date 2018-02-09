@@ -40,7 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     room_preferences = MultiSelectField(max_length=500, choices=ROOM_PREFERENCES, blank=True)
-    hotel_memberships = MultiSelectField(max_length=500, choices=HOTEL_MEMBERSHIPS, blank=True)
+    # hotel_memberships = MultiSelectField(max_length=500, choices=HOTEL_MEMBERSHIPS, blank=True)
 
     objects = UserManager()
 
@@ -66,6 +66,19 @@ class GuestUser(User):
 
     def get_absolute_url(self):
         return reverse('e_reg:my_profile')
+
+
+class HotelMembership(models.Model):
+    membership_programme_name = models.CharField(max_length=100, choices=HOTEL_MEMBERSHIPS, blank=True)
+    membership_number = models.IntegerField(default="", blank=True, null=False)
+    guestuser = models.ForeignKey(GuestUser, on_delete="CASCADE", related_name="membership")
+
+
+    class Meta:
+        ordering = ['-guestuser']
+
+    def __str__(self):
+        return self.membership_programme_name
 
 
 class HotelProperty(models.Model):

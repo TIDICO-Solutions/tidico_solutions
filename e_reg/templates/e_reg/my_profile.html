@@ -121,7 +121,18 @@
     </div>
   </div>
   <div class="row">
-    <div class="mx-auto px-4 py-3 col-lg-4 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
+    <div class="mx-auto px-4 py-3 col-lg-6 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
+      <div class="row">
+        <div class="mx-auto col-sm-9">
+          <h2 class="pt-2">Extras:</h2>
+        </div>
+        <div class="mx-auto col-sm-1 pt-4">
+          <a href=""><u>edit</u></a>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="mx-auto px-4 py-3 col-lg-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
       <div class="row">
         <div class="mx-auto col-sm-9">
           <h2 class="pt-2">Hotel Memberships:</h2>
@@ -135,11 +146,11 @@
         <div class="row">
           <div class="mx-auto px-4 py-3 my-2 col-md-11">
             <table>
-              {% if user.guestuser.hotel_memberships %}
-                {% for membership in user.guestuser.hotel_memberships %}
+              {% if user.guestuser.membership %}
+                {% for hotelmemberships in hotelmembership %}
                 <tr>
-                  <td class="py-1">{{ membership }}</td>
-                  <td class="py-1"><input type="text" name="Membership Number" value=""></td>
+                  <td class="py-1">{{ hotelmemberships.membership_programme_name }}</td>
+                  <td class="pl-4">{{ hotelmemberships.membership_number }}</td>
                 </tr>
                 {% endfor %}
                 {% else %}
@@ -151,17 +162,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="mx-auto px-4 py-3 col-lg-7 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
-      <div class="row">
-        <div class="mx-auto col-sm-9">
-          <h2 class="pt-2">Extras:</h2>
-        </div>
-        <div class="mx-auto col-sm-1 pt-4">
-          <a href=""><u>edit</u></a>
-        </div>
-      </div>
-      <hr>
     </div>
   </div>
 </div>

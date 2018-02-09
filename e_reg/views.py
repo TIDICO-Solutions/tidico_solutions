@@ -7,6 +7,8 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
 from django.views import generic
 
+from itertools import chain
+
 from . import forms
 from . import models
 
@@ -43,7 +45,8 @@ class SignUp(generic.CreateView):
 @login_required
 def my_profile(request):
     guestuser = request.user
-    return render(request, "e_reg/my_profile.html")
+    hotelmembership = guestuser.guestuser.membership.all
+    return render(request, "e_reg/my_profile.html", {"hotelmembership": hotelmembership})
 
 
 @login_required
@@ -77,12 +80,19 @@ def room_preference_update(request):
 @login_required
 def hotel_membership_update(request):
     guestuser = request.user
-    form = forms.HotelMembershipUpdateForm(instance=guestuser)
+    formset = forms.HotelMembershipUpdateFormSet(queryset=guestuser.guestuser.membership.all())
 
     if request.method == "POST":
-        form = forms.HotelMembershipUpdateForm(instance=guestuser, data=request.POST)
-        if form.is_valid():
-            form.save()
+        formset = forms.HotelMembershipUpdateFormSet(request.POST, queryset=guestuser.guestuser.membership.all())
+
+        if formset.is_valid():
+            memberships = formset.save(commit=False)
+
+            for membership in memberships:
+                membership.guestuser = guestuser.guestuser
+                membership.save()
+            for membership in formset.deleted_objects:
+                membership.delete()
             messages.success(request, "You have succesfully updated your Hotel Memberships")
             return HttpResponseRedirect(guestuser.get_absolute_url())
-    return render(request, "e_reg/hotel_membership_update.html", {'form': form})
+    return render(request, "e_reg/hotel_membership_update.html", {'formset': formset})
