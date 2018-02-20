@@ -53,5 +53,6 @@ class HotelMembershipUpdateForm(forms.ModelForm):
 HotelMembershipUpdateFormSet = forms.modelformset_factory(
     models.HotelMembership,
     form = HotelMembershipUpdateForm,
-    extra=2,
+    extra=3,
+    can_delete = True,
 )

@@ -146,7 +146,7 @@
         <div class="row">
           <div class="mx-auto px-4 py-3 my-2 col-md-11">
             <table>
-              {% if user.guestuser.membership %}
+              {% if hotelmembership %}
                 {% for hotelmemberships in hotelmembership %}
                 <tr>
                   <td class="py-1">{{ hotelmemberships.membership_programme_name }}</td>
@@ -155,7 +155,7 @@
                 {% endfor %}
                 {% else %}
                 <tr>
-                  <td>Already a member with Hotel Chains? <br> Store them here to have easy access to them.</td>
+                  <td>Already a member with any Hotel Chains? <br> Store them here to have easy access to them.</td>
                 </tr>
               {% endif %}
             </table>

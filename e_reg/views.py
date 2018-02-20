@@ -87,6 +87,8 @@ def hotel_membership_update(request):
 
         if formset.is_valid():
             memberships = formset.save(commit=False)
+            for membership in formset.deleted_objects:
+                membership.delete()
 
             for membership in memberships:
                 membership.guestuser = guestuser.guestuser
