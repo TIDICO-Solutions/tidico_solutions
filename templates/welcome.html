@@ -11,7 +11,16 @@
 
 <div class="container mb-2">
   {% if user.is_authenticated %}
-  <div class="col-md order-md-1 px-4 py-3 col-md-8 mx-auto bg-content mt-2 text-white align-self-center rounded">
+  <div class="row">
+    <div class="col-md order-md-2 px-4 py-3 col-md-4 mx-auto bg-content mt-2 text-white align-self-center rounded">
+      <h2 class="my-2">Quick Access</h2>
+      <hr>
+      <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="{% url 'e_reg:my_profile' %}"><strong>Profile</strong></a>
+      <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="#"><strong>Select Property</strong></a>
+      <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="#"><strong>Stay History</strong></a>
+    </div>
+
+    <div class="col-md order-md-1 px-4 py-3 col-md-6 mx-auto bg-content mt-2 text-white align-self-center rounded">
   {% else %}
   <div class="row">
     <div class="col-md order-md-2 px-4 py-3 col-md-6 mx-auto bg-content mt-2 text-white align-self-center rounded">

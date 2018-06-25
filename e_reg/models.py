@@ -30,7 +30,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    avatar = models.ImageField(blank=True, null=True)
+    g_avatar = models.ImageField(blank=True, null=True, upload_to='avatars/')
     telephone_number = models.CharField(max_length=20, default="")
     address_street = models.CharField(max_length=255, default="")
     address_postcode = models.CharField(max_length=10, default="")

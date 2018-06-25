@@ -9,7 +9,7 @@ class HotelMembershipInline(admin.StackedInline):
 class UserAdmin(admin.ModelAdmin):
     inlines = [HotelMembershipInline,]
 
-    fields = ['email', 'first_name', 'last_name', "telephone_number", "address_street", "address_postcode", "address_city", "address_country", "room_preferences"]
+    fields = ['g_avatar','email', 'first_name', 'last_name', "telephone_number", "address_street", "address_postcode", "address_city", "address_country", "room_preferences"]
 
     list_display = ['email', 'id', 'first_name', 'last_name', 'is_superuser', "telephone_number", "address_street", "address_postcode", "address_city", "address_country"]
 
