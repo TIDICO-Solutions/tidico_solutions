@@ -22,159 +22,229 @@
 {% endif %}
 
 <div class="container">
-  <!-- <div class="row">
-    <div class="mx-auto px-4 py-4 my-2 text-white rounded bg-content">
-      <div class="row">
-        <div>
-          <p>{{ user.guestuser.g_avatar }}</p>
-          <img src="avatars/bg-plane.jpg" alt="Failed to Load" height=150 width=150 class="rounded">
-        </div>
+  <div class="accordion" id="accordionExample">
+    <div class="bg-content text-white">
+
+      <div class="" id="headingContact">
+        <h5 class="mb-0">
+          <button class="btn mx-auto col-sm-12 bg-content text-white" type="button" data-toggle="collapse" data-target="#collapseContact" aria-expanded="true" aria-controls="collapseContact">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2 class="pt-2">Contact Card</h2>
+              </div>
+
+            </div>
+          </button>
+        </h5>
       </div>
-      <div class="row">
-        <a href="">Change your avatar</a>
-      </div>
-    </div>
-  </div> -->
-  <div class="row">
-    <div class="mx-auto px-4 py-3 col-lg-12 bg-content my-2 text-white align-self-center rounded">
-      <div class="row">
-        <div class="mx-auto col-sm-10">
-          <h2 class="pt-2">Contact Card:</h2>
-        </div>
-        <div class="mx-auto col-sm-1 pt-4">
-          <a href="{% url 'e_reg:contact_update' %}"><u>edit</u></a>
-        </div>
-      </div>
-      <hr>
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto px-4 py-3 my-2 col-md-5">
-            <table>
-              <th><u>Contact:</u></th>
-              <tr>
-                <td>Name:</td>
-                <td class="pl-4">{{ user.guestuser.last_name }}, {{ user.guestuser.first_name }}</td>
-              </tr>
-              <tr>
-                <td>Email:</td>
-                <td class="pl-4">{{ user.guestuser.email }}</td>
-              </tr>
-              <tr>
-                <td>Telephone:</td>
-                <td class="pl-4">{{ user.guestuser.telephone_number }}</td>
-              </tr>
-            </table>
+      <div id="collapseContact" class="collapse show" aria-labelledby="headingContact" data-parent="#accordionExample" style="">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="mx-auto px-4 col-md-5">
+                <table>
+                  <tbody>
+                    <tr><th><u>Contact:</u></th>
+                    </tr>
+                    <tr>
+                      <td>Name:</td>
+                      <td class="pl-4">Dikmen, Timur</td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td class="pl-4">finmaster@hotmail.com</td>
+                    </tr>
+                    <tr>
+                      <td>Telephone:</td>
+                      <td class="pl-4">+31629400311</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="mx-auto px-4 col-md-5">
+                <table>
+                  <tbody>
+                    <tr><th><u>Address:</u></th>
+                    </tr>
+                    <tr>
+                      <td>Street:</td>
+                      <td class="pl-4">Bermuda 104</td>
+                    </tr>
+                    <tr>
+                      <td>Postcode:</td>
+                      <td class="pl-4">1505XC</td>
+                    </tr>
+                    <tr>
+                      <td>City:</td>
+                      <td class="pl-4">Zaandam</td>
+                    </tr>
+                    <tr>
+                      <td>Country:</td>
+                      <td class="pl-4">Netherlands | Nederland</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <div class="mx-auto px-4 py-3 my-2 col-md-5">
-            <table>
-              <th><u>Address:</u></th>
-              <tr>
-                <td>Street:</td>
-                <td class="pl-4">{{ user.guestuser.address_street }}</td>
-              </tr>
-              <tr>
-                <td>Postcode:</td>
-                <td class="pl-4">{{ user.guestuser.address_postcode }}</td>
-              </tr>
-              <tr>
-                <td>City:</td>
-                <td class="pl-4">{{ user.guestuser.address_city }}</td>
-              </tr>
-              <tr>
-                <td>Country:</td>
-                <td class="pl-4">{{ user.guestuser.address_country }}</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="mx-auto px-4 py-3 col-lg-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
-      <div class="row">
-        <div class="mx-auto col-sm-9">
-          <h2 class="pt-2">Room Preferences:</h2>
-        </div>
-        <div class="mx-auto col-sm-1 pt-4">
-          <a href="{% url 'e_reg:room_preference_update' %}"><u>edit</u></a>
-        </div>
-      </div>
-      <hr>
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto px-4 py-3 my-2 col-md-11">
-            <table>
-              {% if user.guestuser.room_preferences %}
-                {% for preference in user.guestuser.room_preferences %}
-                <tr>
-                  <td class="py-1">{{ preference }}</td>
-                </tr>
-                {% endfor %}
-                {% else %}
-                <tr>
-                  <td>Please add some room prefences! <br> Make sure the hotel knows exactly what you desire.</td>
-                </tr>
-              {% endif %}
-            </table>
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="btn">
+                <a href="/e_reg/my_profile/contact_update/"><u>edit</u></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="mx-auto px-4 py-3 col-lg-6 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
-      <div class="row">
-        <div class="mx-auto col-sm-9">
-          <h2 class="pt-2">Habitual Preferences:</h2>
-        </div>
-        <div class="mx-auto col-sm-1 pt-4">
-          <a href=""><u>edit</u></a>
-        </div>
+
+      <div class="" id="headingRoom">
+        <h5 class="mb-0">
+          <button class="btn mx-auto col-sm-12 bg-content text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseRoom" aria-expanded="false" aria-controls="collapseRoom">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2 class="pt-2">Room Preferences</h2>
+              </div>
+            </div>
+          </button>
+        </h5>
       </div>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
-    <div class="mx-auto px-4 py-3 col-lg-6 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
-      <div class="row">
-        <div class="mx-auto col-sm-9">
-          <h2 class="pt-2">Extras:</h2>
-        </div>
-        <div class="mx-auto col-sm-1 pt-4">
-          <a href=""><u>edit</u></a>
-        </div>
-      </div>
-      <hr>
-    </div>
-    <div class="mx-auto px-4 py-3 col-lg-5 mx-auto bg-content mt-2 mb-2 text-white align-self-center rounded">
-      <div class="row">
-        <div class="mx-auto col-sm-9">
-          <h2 class="pt-2">Hotel Memberships:</h2>
-        </div>
-        <div class="mx-auto col-sm-1 pt-4">
-          <a href="{% url 'e_reg:hotel_membership_update' %}"><u>edit</u></a>
-        </div>
-      </div>
-      <hr>
-      <div class="container">
-        <div class="row">
-          <div class="mx-auto px-4 py-3 my-2 col-md-11">
-            <table>
-              {% if hotelmembership %}
-                {% for hotelmemberships in hotelmembership %}
-                <tr>
-                  <td class="py-1">{{ hotelmemberships.membership_programme_name }}</td>
-                  <td class="pl-4">{{ hotelmemberships.membership_number }}</td>
-                </tr>
-                {% endfor %}
-                {% else %}
-                <tr>
-                  <td>Already a member with any Hotel Chains? <br> Store them here to have easy access to them.</td>
-                </tr>
-              {% endif %}
-            </table>
+      <div id="collapseRoom" class="collapse" aria-labelledby="headingRoom" data-parent="#accordionExample" style="">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="mx-auto px-4 col-md-11">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="">High Floor</td>
+                    </tr>
+                    <tr>
+                      <td class="">Away From Elevator</td>
+                    </tr>
+                    <tr>
+                      <td class="">Smoking</td>
+                    </tr>
+                    <tr>
+                      <td class="">Shower</td>
+                    </tr>
+                    <tr>
+                      <td class="">Bath Tub</td>
+                    </tr>
+                    <tr>
+                      <td class="">City</td>
+                    </tr>
+                    <tr>
+                      <td class="">Garden</td>
+                    </tr>
+                    <tr>
+                      <td class="">Water Front</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="btn">
+                <a href="/e_reg/my_profile/room_preference_update/"><u>edit</u></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="" id="headingHabit">
+        <h5 class="mb-0">
+          <button class="btn mx-auto col-sm-12 bg-content text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseHabit" aria-expanded="false" aria-controls="collapseHabit">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2 class="pt-2">Habits</h2>
+              </div>
+            </div>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseHabit" class="collapse" aria-labelledby="headingHabit" data-parent="#accordionExample">
+        <div class="card-body">
+          ...
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="btn">
+                <a href="#"><u>edit</u></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="" id="headingExtra">
+        <h5 class="mb-0">
+          <button class="btn mx-auto col-sm-12 bg-content text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseExtra" aria-expanded="false" aria-controls="collapseExtra">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2 class="pt-2">Extras</h2>
+              </div>
+            </div>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseExtra" class="collapse" aria-labelledby="headingExtra" data-parent="#accordionExample">
+        <div class="card-body">
+          ...
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="btn">
+                <a href="#"><u>edit</u></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="" id="headingMember">
+        <h5 class="mb-0">
+          <button class="btn mx-auto col-sm-12 bg-content text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseMember" aria-expanded="false" aria-controls="collapseMember">
+            <div class="row">
+              <div class="col-sm-9">
+                <h2 class="pt-2">Hotel Memberships</h2>
+              </div>
+            </div>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseMember" class="collapse" aria-labelledby="headingMember" data-parent="#accordionExample">
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="mx-auto px-4 col-md-11">
+                <table>
+                  {% if hotelmembership %}
+                    {% for hotelmemberships in hotelmembership %}
+                    <tr>
+                      <td class="py-1">{{ hotelmemberships.membership_programme_name }}</td>
+                      <td class="pl-4">{{ hotelmemberships.membership_number }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                      <td>Already a member with any Hotel Chains? <br> Store them here to have easy access to them.</td>
+                    </tr>
+                  {% endif %}
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="btn">
+                <a href="{% url 'e_reg:hotel_membership_update' %}"><u>edit</u></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
