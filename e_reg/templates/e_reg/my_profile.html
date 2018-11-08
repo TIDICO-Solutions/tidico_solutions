@@ -41,48 +41,42 @@
         <div class="card-body">
           <div class="container">
             <div class="row">
-              <div class="mx-auto px-4 mb-4 col-md-5">
+              <div class="mx-auto mb-4 col-md-5">
                 <table>
-                  <tbody>
-                    <tr><th><u>Contact:</u></th>
-                    </tr>
-                    <tr>
-                      <td>Name:</td>
-                      <td class="pl-4">Dikmen, Timur</td>
-                    </tr>
-                    <tr>
-                      <td>Email:</td>
-                      <td class="pl-4">finmaster@hotmail.com</td>
-                    </tr>
-                    <tr>
-                      <td>Telephone:</td>
-                      <td class="pl-4">+31629400311</td>
-                    </tr>
-                  </tbody>
+                  <th><u>Contact:</u></th>
+                  <tr>
+                    <td>Name:</td>
+                    <td class="pl-4">{{ user.guestuser.last_name }}, {{ user.guestuser.first_name }}</td>
+                  </tr>
+                  <tr>
+                    <td>Email:</td>
+                    <td class="pl-4">{{ user.guestuser.email }}</td>
+                  </tr>
+                  <tr>
+                    <td>Telephone:</td>
+                    <td class="pl-4">{{ user.guestuser.telephone_number }}</td>
+                  </tr>
                 </table>
               </div>
-              <div class="mx-auto px-4 col-md-5">
+              <div class="mx-auto col-md-5">
                 <table>
-                  <tbody>
-                    <tr><th><u>Address:</u></th>
-                    </tr>
-                    <tr>
-                      <td>Street:</td>
-                      <td class="pl-4">Bermuda 104</td>
-                    </tr>
-                    <tr>
-                      <td>Postcode:</td>
-                      <td class="pl-4">1505XC</td>
-                    </tr>
-                    <tr>
-                      <td>City:</td>
-                      <td class="pl-4">Zaandam</td>
-                    </tr>
-                    <tr>
-                      <td>Country:</td>
-                      <td class="pl-4">Netherlands | Nederland</td>
-                    </tr>
-                  </tbody>
+                  <th><u>Address:</u></th>
+                  <tr>
+                    <td>Street:</td>
+                    <td class="pl-4">{{ user.guestuser.address_street }}</td>
+                  </tr>
+                  <tr>
+                    <td>Postcode:</td>
+                    <td class="pl-4">{{ user.guestuser.address_postcode }}</td>
+                  </tr>
+                  <tr>
+                    <td>City:</td>
+                    <td class="pl-4">{{ user.guestuser.address_city }}</td>
+                  </tr>
+                  <tr>
+                    <td>Country:</td>
+                    <td class="pl-4">{{ user.guestuser.address_country }}</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -114,32 +108,17 @@
             <div class="row">
               <div class="mx-auto px-4 col-md-11">
                 <table>
-                  <tbody>
+                  {% if user.guestuser.room_preferences %}
+                    {% for preference in user.guestuser.room_preferences %}
                     <tr>
-                      <td class="">High Floor</td>
+                      <td class="py-1">{{ preference }}</td>
                     </tr>
+                    {% endfor %}
+                    {% else %}
                     <tr>
-                      <td class="">Away From Elevator</td>
+                      <td>Please add some room prefences! <br> Make sure the hotel knows exactly what you desire.</td>
                     </tr>
-                    <tr>
-                      <td class="">Smoking</td>
-                    </tr>
-                    <tr>
-                      <td class="">Shower</td>
-                    </tr>
-                    <tr>
-                      <td class="">Bath Tub</td>
-                    </tr>
-                    <tr>
-                      <td class="">City</td>
-                    </tr>
-                    <tr>
-                      <td class="">Garden</td>
-                    </tr>
-                    <tr>
-                      <td class="">Water Front</td>
-                    </tr>
-                  </tbody>
+                  {% endif %}
                 </table>
               </div>
             </div>

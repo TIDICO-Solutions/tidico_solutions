@@ -49,6 +49,11 @@ def my_profile(request):
     return render(request, "e_reg/my_profile.html", {"hotelmembership": hotelmembership})
 
 
+def select_property(request):
+    guestuser = request.user
+    return render(request, "e_reg/select_property.html")
+
+
 @login_required
 def contact_update(request):
     guestuser = request.user
