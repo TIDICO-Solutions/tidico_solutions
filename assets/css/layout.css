@@ -41,12 +41,8 @@ body {
   background-color: rgba(73,74,79,.9);
 }
 
-/* .container {
-  flex-grow: 1;
-} */
-
 /* --------------------
-        Nav
+      Nav
 -------------------- */
 
 .bg-gradient {
@@ -56,20 +52,12 @@ body {
   box-shadow: 0 3px 10px;
 }
 
-nav {
-  font-size: 1.05em;
-}
-
-nav a:hover {
-  font-size: 1.1em;
-}
-
 .navbar-dark .navbar-toggler {
   border-color: #696969;
 }
 
 /* --------------------
-        Content
+      Content
 -------------------- */
 
 .title {
@@ -91,7 +79,7 @@ div.homebanner hr {
 }
 
 /* --------------------
-        Footer
+      Footer
 -------------------- */
 
 .main-footer {
