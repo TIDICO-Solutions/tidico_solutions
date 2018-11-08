@@ -49,6 +49,7 @@ def my_profile(request):
     return render(request, "e_reg/my_profile.html", {"hotelmembership": hotelmembership})
 
 
+@login_required
 def select_property(request):
     guestuser = request.user
     return render(request, "e_reg/select_property.html")

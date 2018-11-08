@@ -42,6 +42,11 @@ HOTEL_MEMBERSHIPS = (
 )
 
 
+PROPERTIES = (
+    ("Sofitel Legend The Grand Amsterdam", "Sofitel Legend The Grand Amsterdam"),
+)
+
+
 COUNTRIES = (
     ("Afghanistan | افغانستان","Afghanistan | افغانستان"),
     ("Albania | Shqipëria","Albania | Shqipëria"),

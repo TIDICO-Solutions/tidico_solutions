@@ -16,6 +16,7 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         <hr>
+        <a href="{% url 'e_reg:my_profile' %}" class="btn">Back</a>
         <input type="submit" class="btn float-right" value="Update">
       </form>
     </div>
