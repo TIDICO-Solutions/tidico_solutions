@@ -27,7 +27,7 @@
               {% if user.is_authenticated %}
               <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="{% url 'e_reg:my_profile' %}"><strong>Profile</strong></a>
               <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="{% url 'e_reg:select_property' %}"><strong>Select Property</strong></a>
-              <a class="nav-item nav-link btn mr-2 my-2 btn-secondary btn-danger" href="{% url 'e_reg:logout' %}"><strong>Log out</strong></a>
+              <a class="nav-item nav-link btn mr-2 my-2 btn-danger" href="{% url 'e_reg:logout' %}"><strong>Log out</strong></a>
               {% else %}
               <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="{% url 'e_reg:login' %}"><strong>Login</strong></a>
               <a class="nav-item nav-link btn mr-2 my-2 btn-secondary" href="{% url 'forgot_password' %}"><strong>Forgot Password?</strong></a>
