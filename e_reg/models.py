@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils import timezone
 from multiselectfield import MultiSelectField
 
-from .choices import COUNTRIES, ROOM_PREFERENCES, HOTEL_MEMBERSHIPS
+from .choices import COUNTRIES, ROOM_PREFERENCES, HOTEL_MEMBERSHIPS, PROPERTIES
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -81,9 +81,9 @@ class HotelMembership(models.Model):
 
 
 class HotelProperty(models.Model):
-    name = models.CharField(max_length=255)
-    membership = models.CharField(max_length=30)
-    room_features = models.CharField(max_length=255, default="")
+    name = models.CharField(max_length=255, choices=PROPERTIES, blank=True)
+    membership = models.CharField(max_length=255, choices=HOTEL_MEMBERSHIPS, blank=True)
+    room_features = models.CharField(max_length=255, default="", blank=True)
 
     class Meta:
         verbose_name_plural = "Hotel Properties"

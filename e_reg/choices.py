@@ -43,6 +43,7 @@ HOTEL_MEMBERSHIPS = (
 
 
 PROPERTIES = (
+    ("DoubleTree by Hilton - Centraal Station", "DoubleTree by Hilton - Centraal Station"),
     ("Sofitel Legend The Grand Amsterdam", "Sofitel Legend The Grand Amsterdam"),
 )
 
