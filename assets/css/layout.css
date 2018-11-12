@@ -66,6 +66,10 @@ body {
   font-size: 3rem;
 }
 
+.form-control {
+  font-family: 'Old Standard TT', sans-serif;
+}
+
 body a:hover {
   color: lightgreen;
 }
