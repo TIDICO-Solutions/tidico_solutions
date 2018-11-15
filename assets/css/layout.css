@@ -34,11 +34,11 @@ body {
   font-family: serif;
   /* background: url("../Images/bg-plane.jpg") center no-repeat;
   background-size: cover; */
-  background-color: #f2f2f2;
+  background-color: #ccc;
 }
 
 .bg-content {
-  background-color: rgba(73,74,79,.8);
+  background-color: rgba(64,64,64,.8);
 }
 
 /* --------------------
@@ -60,7 +60,7 @@ body {
 -------------------- */
 
 .title {
-  color: #4d4d33;
+  color: #4d4d4d;
   text-shadow: 4px -1px 8px #696969;
   font-size: 3rem;
 }
