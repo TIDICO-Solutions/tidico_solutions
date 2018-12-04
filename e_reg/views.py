@@ -10,7 +10,7 @@ from django.views import generic
 from itertools import chain
 
 from . import forms
-from . import models
+from e_reg.models import UserManager,User,GuestUser,HotelMembership,HotelProperty
 
 
 class LoginView(generic.FormView):
@@ -51,8 +51,8 @@ def my_profile(request):
 
 @login_required
 def select_property(request):
-    guestuser = request.user
-    return render(request, "e_reg/select_property.html")
+    hotelproperties = HotelProperty.objects.order_by("name")
+    return render(request, "e_reg/select_property.html", {"hotelproperty": hotelproperties})
 
 
 @login_required

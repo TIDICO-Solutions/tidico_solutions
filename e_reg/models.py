@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.contrib.auth.models import (User, AbstractBaseUser, BaseUserManager, PermissionsMixin)
+from django.contrib.auth.models import User, AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
@@ -75,6 +75,7 @@ class HotelMembership(models.Model):
 
     class Meta:
         ordering = ['-guestuser']
+        verbose_name_plural = "Hotel Memberships"
 
     def __str__(self):
         return self.membership_programme_name

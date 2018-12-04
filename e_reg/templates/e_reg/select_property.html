@@ -13,6 +13,10 @@
 <div class="container">
   <select class="form-control">
     <option>Select Property</option>
+    <option disabled>---------------</option>
+    {% for property in hotelproperty %}
+    <option>{{ property.name }}</option>
+    {% endfor %}
   </select>
   <ul>
     <li>search bar</li>
